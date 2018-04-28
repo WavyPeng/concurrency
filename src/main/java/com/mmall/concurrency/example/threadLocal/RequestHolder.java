@@ -11,15 +11,17 @@ public class RequestHolder {
      * 这样在此url在实际被处理时就可以在ThreadLocal中进行寻找
      * @param id
      */
+    /*向ThreadLocal中添加数据*/
     public static void add(Long id){
         requestHolder.set(id);
     }
 
-
+    /*获取ThreadLocal中的数据*/
     public static Long getId(){
         return requestHolder.get();
     }
 
+    /*移除ThreadLocal中的数据*/
     public static void remove(){
         requestHolder.remove();
     }
